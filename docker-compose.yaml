@@ -5,4 +5,4 @@ services:
     ports:
       - "11080:80/tcp"
     volumes:
-      - ./html/:/usr/local/apache2/htdocs/
+      - ./docs/:/usr/local/apache2/htdocs/
