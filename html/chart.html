@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="icon" href="image/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <title>chart</title>
+</head>
+<body>
+    <div class="description"> </div>
+
+    <div id="prob-tansyo-pane"></div>
+
+    <div class="chart-pane">
+        <div class="chart-container" style="position: relative; width:80vw; height:60vh">
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+    <script src="https://unpkg.com/chartjs-plugin-colorschemes"></script>
+    <script src="src/http_utility.js"></script>
+    <script src="src/timechart_drawer.js"></script>
+    <script src="src/prob_tansyo_drawer.js"></script>
+
+    <script>
+        target_id = getParameterByName('id', window.location.href);
+
+        if (!target_id) {
+            throw 'InvalidQuery';
+        }
+
+        const time_path = 'time_data/' + target_id + '.json';
+        const req_time = new XMLHttpRequest(); 
+        req_time.onreadystatechange = draw_chart;
+        req_time.onerror = (e) => {
+            console.error('failed to getting time_data json file');
+            console.error(req_time.statusText);
+        };
+
+        req_time.open("GET", time_path, true);
+        req_time.send();
+
+        const ptan_path = 'prob_tansyo_data/' + target_id + '.json';
+        const req_ptan = new XMLHttpRequest(); 
+        req_ptan.onreadystatechange = draw_prob_tansyo;
+        req_ptan.onerror = (e) => {
+            console.error('failed to getting time_data json file');
+            console.error(req_ptan.statusText);
+        };
+
+        req_ptan.open("GET", ptan_path, true);
+        req_ptan.send();
+
+    </script>
+
+</body>
+</html>

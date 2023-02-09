@@ -1,0 +1,236 @@
+:root {
+    --color1: #f7f5fb;
+    --color2: #909cc2;
+    --color3: #9e788f;
+    --color4: #333333;
+    --color5: #b7ad99;
+
+    --color1-text: #000001;
+    --color2-text: #fffffe;
+    --color3-text: #fffffe;
+    --color4-text: #fffffe;
+    --color5-text: #000001;
+}
+
+.chart-container {
+    display: block;
+    margin: auto;
+}
+
+.chart-pane {
+}
+
+#myChart {
+}
+
+body {
+    background-color: #fffffe;
+    color: #000001;
+    font-size: 12px;
+}
+
+a {
+    text-decoration: none;
+    color: #000001;
+}
+
+h1 {
+    font-size: 1.2em;
+    color: var(--color4-text);
+    background-color: var(--color4);
+    text-align: center;
+    margin:  0;
+    padding: 0;
+}
+
+.prob-tansyo-div {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-basis: auto;
+    width: 95%;
+}
+
+.prob-tansyo-elem {
+    margin: 0.2em;
+    border-radius: 0.3em 0.3em 0.3em 0.3em;
+    box-shadow: 0.13em 0.13em 0.13em 0.13em rgba(0,0,0,0.2);
+}
+
+.prob-tansyo-umaban-name {
+    width: 12em;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    color: var(--color1-text);
+    background-color: var(--color1);
+    border-radius: 0.3em 0.3em 0em 0em;
+    box-sizing: border-box;
+}
+
+.prob-tansyo-umaban {
+    display: inline-block;
+    width: 2em;
+    text-align: center;
+    border-radius: 0.3em 0em 0em 0em;
+    box-sizing: border-box;
+}
+
+.prob-tansyo-name {
+    display: inline-block;
+    width: 10em;
+    text-align: center;
+    border-radius: 0em 0.3em 0em 0em;
+    box-sizing: border-box;
+}
+
+.prob-tansyo-prob {
+    width: 12em;
+    text-align: center;
+    color: var(--color5-text);
+    background-color: var(--color5);
+    border-radius: 0em 0em 0.3em 0.3em ;
+    box-sizing: border-box;
+}
+
+.date-list {
+    list-style: none;
+    margin: auto;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    flex-basis: auto;
+    max-width: 40em;
+}
+
+.date-list > li {
+    padding: 0.5em;
+    box-sizing: border-box;
+    width: 50%;
+    max-width: 20em;
+}
+
+.mainrace-left {
+    width: 3.5em;
+    text-align: center;
+    margin-right: 0.7em;
+    display: inline-block;
+    border-style: solid;
+    border-color: var(--color3);
+    border-width: 0.1em;
+    border-radius: 0.3em 0.3em;
+}
+
+.mainrace-list {
+    font-size: 0.9em;
+    list-style: none;
+    padding-left: 0.3em;
+    margin: auto;
+}
+
+.mainrace-list > li {
+    font-size: 0.9em;
+    padding: 0.2em;
+    padding-top: 0em;
+    margin: auto;
+}
+
+.date-containt-date {
+    font-size: 1.2em;
+    margin: 0.3em;
+    margin-top: 0em;
+    background-color: var(--color2);
+    color: var(--color2-text);
+    display: block;
+    border-radius: 0.3em 0.3em;
+    text-align: center;
+}
+
+.date-containt {
+    padding: 0.5em;
+    background-color: var(--color1);
+    border-radius: 0.3em 0.3em;
+    box-shadow: 0.13em 0.13em 0.13em 0.13em rgba(0,0,0,0.2);
+}
+
+.venue-list {
+    list-style:  none;
+    margin: auto;
+    justify-content: center;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    flex-basis: auto;
+}
+
+.venue-list > li {
+    padding:  0 0.3em;
+    flex-basis: 1 1 auto;
+    box-sizing: border-box;
+    width: 33%;
+    max-width: 20em;
+}
+
+.venue-list > li > h1 {
+    font-size: 1.4em;
+    color: var(--color3-text);
+    background-color: var(--color3);
+    text-align: center;
+    box-shadow: 0.13em 0.13em 0.13em 0.13em rgba(0,0,0,0.2);
+    margin: auto;
+    margin-left: 1.4em;
+    margin-bottom: 0.3em;
+    padding: 0.2em;
+}
+
+.race-list {
+    list-style: none;
+    padding-top: 0.2em;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.race-list > li{
+    box-sizing: border-box;
+    margin:  0.2em 0;
+    padding: 0;
+}
+
+.raceinfo-list {
+    list-style:  none;
+    padding-left: 0;
+    display: flex;
+    align-items: stretch;
+}
+
+.raceinfo-list > li:first-child {
+    align-items: center;  /* adjast vertically  */
+    display: flex;
+    flex: 0 0 auto;
+    border-radius: 0.3em 0em 0em 0.3em;
+    background-color: var(--color2);
+    color: var(--color2-text);
+    box-sizing: border-box;
+}
+
+.racenumber {
+    text-align: center;
+    width: 1em;
+    font-size: 1.3em;
+    padding:  0.1em;
+}
+
+.raceinfo-list > li {
+    text-align: center;
+    padding:  0.2em;
+    border-radius: 0em 0.3em 0.3em 0em ;
+    background-color: var(--color1);
+    color: var(--color1-text);
+    box-shadow: 0.13em 0.13em 0.13em 0em rgba(0,0,0,0.2);
+    box-sizing: border-box;
+    flex: 1 1 auto;
+}

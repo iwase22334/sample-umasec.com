@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="icon" href="image/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <title>uma</title>
+</head>
+<body>
+    <div id="containt"> </div>
+
+    <script language="javascript" src="src/http_utility.js"></script>
+    <script language="javascript" src="src/active_ids.js"></script>
+    <script language="javascript" src="src/index_date.js"></script>
+    <script language="javascript" src="src/index_race.js"></script>
+    <script>
+        window.onload = () => {
+            datapack = get_datapack();
+            const containt = document.getElementById('containt');
+
+            if (target_date = getParameterByName('date', window.location.href)) {
+                data = datapack['data'].find(elem => elem['date'] == target_date);
+
+                // remove all elements that currentry showing
+                while (containt.lastChild) {
+                    containt.removeChild(containt.lastChild);
+                }
+
+                if (data) {
+                    const ul = create_venue_list(data);
+
+                    containt.appendChild(ul);
+                }
+
+                else {
+                    div = document.createElement('div');
+                    div.innerText = 'invalid request';
+                    containt.appendChild(div);
+                }
+
+            }
+
+            else {
+                const ul = create_date_list(datapack);
+                containt.appendChild(ul);
+            }
+
+        }
+    </script>
+</body>
+</html>
